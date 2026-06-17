@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mansi Parikh</title>
+  <meta name="description" content="Mansi Parikh — entrepreneur, product builder, writer. Austin, TX." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --ink: #1c1c1a;
+      --ink-soft: #5a5751;
+      --rule: #d8d3c7;
+      --accent: #6b4a2b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 28px 96px;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 0 0 18px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(44px, 8vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 32px;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+      margin: 0 0 48px;
+      border-radius: 2px;
+    }
+
+    .lede {
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(20px, 2.4vw, 23px);
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0 0 32px;
+    }
+
+    .bio p {
+      margin: 0 0 22px;
+      color: var(--ink);
+    }
+
+    .bio .intro-projects {
+      margin-top: 36px;
+      margin-bottom: 0;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--ink-soft);
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 56px 0 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .projects { margin-bottom: 56px; }
+
+    .project {
+      display: grid;
+      grid-template-columns: 44px 1fr 20px;
+      gap: 18px;
+      align-items: start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink);
+      border-top: none;
+    }
+    .project:hover .project-title { color: var(--accent); }
+    .project:hover .project-arrow { transform: translateX(4px); color: var(--accent); }
+    .project:hover .project-icon { color: var(--accent); }
+
+    .project-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--ink);
+      transition: color 0.2s ease;
+      margin-top: 2px;
+    }
+    .project-icon svg { width: 100%; height: 100%; display: block; }
+
+    .project-body { min-width: 0; }
+
+    .project-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      margin: 6px 0 0;
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      line-height: 1.55;
+    }
+
+    .project-arrow {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      color: var(--ink-soft);
+      transition: transform 0.2s ease, color 0.2s ease;
+      align-self: center;
+      text-align: right;
+    }
+
+    .contact p {
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .contact a { color: var(--ink); }
+
+    @media (max-width: 520px) {
+      .page { padding: 28px 22px 72px; }
+      .photo { margin-bottom: 36px; max-width: 100%; }
+      .project { grid-template-columns: 36px 1fr 18px; gap: 14px; }
+      .project-icon { width: 30px; height: 30px; }
+      .project-title { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <p class="eyebrow">Austin, TX</p>
+
+    <h1>Hi, I am Mansi.</h1>
+
+    <img class="photo" src="photo.jpg" alt="Mansi Parikh" />
+
+    <p class="lede">
+      I started my first company when I was 21. I'm 42 now &mdash; and a lot of who I am has been shaped by collaborating with incredible people throughout my career.
+    </p>
+
+    <div class="bio">
+      <p>
+        Before I took a sabbatical to experience life as a new mother, I led product and analytics at <a href="https://rechargepayments.com/">ReCharge Payments</a>, helping ecommerce merchants run their subscription businesses. Before that I was at <a href="https://www.nytimes.com/">The New York Times</a> in advertising analytics, a senior PM at <a href="https://integralads.com/">Integral Ad Science</a> working on attribution and ad fraud, and a data scientist at TruEffect building probabilistic models for media measurement and real-time bidding. I co-founded KindWhale, a pay-per-article product for academic publishing, in 2016.
+      </p>
+
+      <p class="intro-projects">As an entrepreneur, here are the projects I'm working on now:</p>
+    </div>
+
+    <h2 class="section-label">Projects</h2>
+
+    <div class="projects">
+
+      <a class="project" href="https://pixelm.github.io/middlegame/">
+        <div class="project-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="6" r="2.4"/>
+            <path d="M9.5 9 L 14.5 9 L 14 12 L 10 12 Z"/>
+            <path d="M8 12 L 16 12 L 15.5 17 L 8.5 17 Z"/>
+            <path d="M6.5 19 L 17.5 19 L 17.5 21 L 6.5 21 Z"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Middlegame</div>
+          <p class="project-desc">The Founder Clarity Sprint &mdash; helping technical founders become as clear about who they are as what they've built.</p>
+        </div>
+        <span class="project-arrow">&rarr;</span>
+      </a>
+
+      <a class="project" href="https://pixelm.github.io/mightyoak/">
+        <div class="project-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 L 12 6"/>
+            <path d="M6 10 C 6 7, 9 6, 12 6 C 15 6, 18 7, 18 10 Z"/>
+            <path d="M6 10 L 18 10"/>
+            <path d="M7 10 C 7 16, 9 22, 12 22 C 15 22, 17 16, 17 10"/>
+            <path d="M9 13 L 15 13" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-title">MightyOak Dev</div>
+          <p class="project-desc">Fast, unbiased advisory for DIY founders building ecommerce. Short calls from $25.</p>
+        </div>
+        <span class="project-arrow">&rarr;</span>
+      </a>
+
+      <a class="project" href="https://pixelm.github.io/wildwillow/">
+        <div class="project-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 C 7 7, 6 14, 12 22 C 18 14, 17 7, 12 2 Z"/>
+            <path d="M12 4 L 12 21"/>
+            <path d="M12 9 L 9 12"/>
+            <path d="M12 13 L 9 16"/>
+            <path d="M12 9 L 15 12"/>
+            <path d="M12 13 L 15 16"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-title">WildWillow</div>
+          <p class="project-desc">A platform for parents to get a full picture of curated remedies &mdash; yoga, breathwork, herbalism, and more &mdash; for the everyday childhood things that don't necessarily need medical intervention.</p>
+        </div>
+        <span class="project-arrow">&rarr;</span>
+      </a>
+
+      <a class="project" href="https://pixelm.github.io/timebank/">
+        <div class="project-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3 L 18 3"/>
+            <path d="M6 21 L 18 21"/>
+            <path d="M7 3 L 17 3 C 17 8, 13 11, 12 12 C 13 13, 17 16, 17 21 L 7 21 C 7 16, 11 13, 12 12 C 11 11, 7 8, 7 3 Z"/>
+            <path d="M9 7 L 15 7"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Timebank</div>
+          <p class="project-desc">Moms helping moms. A time exchange instead of a money exchange &mdash; a way to build community and share the invisible load.</p>
+        </div>
+        <span class="project-arrow">&rarr;</span>
+      </a>
+
+    </div>
+
+    <h2 class="section-label">Elsewhere</h2>
+    <section class="contact">
+      <p>
+        Want to collaborate? Email me at
+        <a href="mailto:Mansip84@gmail.com">Mansip84@gmail.com</a>
+        or reach out on
+        <a href="https://www.linkedin.com/in/mansip/">LinkedIn</a>.
+      </p>
+      <p>
+        I also write on
+        <a href="https://middlegame.substack.com/">Substack</a>.
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>
